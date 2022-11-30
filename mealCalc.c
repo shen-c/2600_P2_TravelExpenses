@@ -8,8 +8,7 @@
 #define BUFFER_SIZE 10000
 
 bool parse_float(char *str, double *floatNumber);
-
-void printMeals(Expenses *e);
+//void printMeals(Expenses *e);
 
 //fill out the meals array based on user input
 //will depend on the hour parameters of depart/arrival days
@@ -212,7 +211,7 @@ void getMeals(Expenses *e){
             e->total_meals += mealCost; 
         }
     }
-    printMeals(e);        
+    //printMeals(e);        
 }
 
 //print the array for testing
