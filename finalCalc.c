@@ -11,7 +11,12 @@ void totalIncurred(Expenses *e){
     printf("Incurred Expenses:\n");
     printf("Airfare: \t %f \n", e->airfare);
     printf("Meals: \t %f \n", e->total_meals); //assuming I can use the meal accumulator from Farid's branch
-    printf("");
+    printf("Hotel: \t %f \n", e->hotelExpenses);
+    printf("Car Rental: \t %f \n", e->carRentals);
+    //need to add user input for gas used on a personal car.
+    printf("Parking Fees: \t %f", e->parkingFees);
+    printf("Taxi Fees: \t %f \n", e->taxiFees);
+    printf("Registration Fees: \t %f \n", e->registrationFees);
 }
 void totalAllowable(Expenses *e){
     //print line-items of each expense allowable
@@ -23,7 +28,8 @@ void totalAllowable(Expenses *e){
     //Meals:                $50.24
     //      Allowable:      ($37.00)
     //Hotels:               $200.10
-    //      Allowable;      ($180.00)                 
+    //      Allowable;      ($180.00)
+                    
 }
 void totalBill(Expenses *e){
     //display excess or amount saved
