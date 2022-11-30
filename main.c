@@ -4,7 +4,15 @@
 #include "finalCalc.h"
 
 int main()
-{
+{   
+    void fillExpenses(Expenses *e);
+    void printExpenses(Expenses *e);
+    void getMeals(Expenses *e);
+    void printMeals(Expenses *e);
+    void totalIncurred(Expenses *e);
+    void totalAllowable(Expenses *e);
+    void totalBill(Expenses *e);  
+    
     Expenses trip1; // the struct holding all expenses
     Expenses *tripPtr = &trip1; //a pointer to pass the struct by reference into functions
     
