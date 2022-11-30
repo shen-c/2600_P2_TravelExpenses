@@ -8,6 +8,10 @@ void totalIncurred(Expenses *e){
     //Expenses incurred:
     //Airfare:              $100.95
     //Meals:                $50.24
+    printf("Incurred Expenses:\n");
+    printf("Airfare: \t %f \n", e->airfare);
+    printf("Meals: \t %f \n", e->total_meals); //assuming I can use the meal accumulator from Farid's branch
+    printf("");
 }
 void totalAllowable(Expenses *e){
     //print line-items of each expense allowable
