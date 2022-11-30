@@ -17,6 +17,7 @@ int main()
     //implement "expenseSheet"
 
     //get user input for expenses (does not include meals)
+
     fillExpenses(tripPtr);
     //print everything filled out so far in the struct (for testing)
     printExpenses(tripPtr);
