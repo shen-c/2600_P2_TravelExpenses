@@ -1,5 +1,6 @@
 #include "expenseSheet.h"
 #include <stdio.h>
+#include <math.h> //for absolute value function fabs().
 
 void totalIncurred(Expenses *e){
     //print line-items of each expense occurred
@@ -46,4 +47,14 @@ void totalAllowable(Expenses *e){
 }
 void totalBill(Expenses *e){
     //display excess or amount saved
+    printf("Total Bill: ");
+    double bill = 0;
+    //airfare is assumed to be covered evenly.
+    bill += e->total_meals - e->total_allowable_meals;
+    bill += e->hotelExpenses - (90.0 * (e->totalDays + 1));
+    //car rental and gas assumed to be covered.
+    bill += e->parkingFees - (e->totalDays * 6.0);
+    bill += e->taxiFees - (e->totalDays * 10.0);
+    //registration fees assumed to be covered.
+    printf(bill < 0 ? "(%f)" : "%f", fabs(bill));
 }
