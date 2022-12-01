@@ -10,15 +10,23 @@ void totalIncurred(Expenses *e){
     //Airfare:              $100.95
     //Meals:                $50.24
     printf("Incurred Expenses:\n");
-    printf("Airfare: \t %f \n", e->airfare);
-    printf("Meals: \t %f \n", e->total_meals); //assuming I can use the meal accumulator from Farid's branch
-    printf("Hotel: \t %f \n", e->hotelExpenses);
-    printf("Car Rental: \t %f \n", e->carRentals);
+    printf("Airfare: \t\t $%.2lf \n", e->airfare);
+    printf("\tAllowable:\t ($%.2lf)\n", e->airfare);
+    printf("Meals: \t\t\t $%.2lf \n", e->total_meals); //assuming I can use the meal accumulator from Farid's branch
+    printf("\tAllowable:\t ($%.2lf)\n", e->total_allowable_meals);
+    printf("Hotel: \t\t\t $%.2lf \n", e->hotelExpenses);
+    printf("\tAllowable:\t ($%.2lf)\n", 90.0 * (e->wholeDays + 1));
+    printf("Car Rental: \t\t $%.2lf \n", e->carRentals);
+    printf("\tAllowable:\t ($%.2lf)\n", e->carRentals);
     //gas is assumed to be perfectly covered.
-    printf("Allowed Gas: \t %f \n", e->milesDriven * 0.27);
-    printf("Parking Fees: \t %f", e->parkingFees);
-    printf("Taxi Fees: \t %f \n", e->taxiFees);
-    printf("Registration Fees: \t %f \n", e->registrationFees);
+    printf("Pivate Vehicle Miles: \t $%.2lf \n", e->milesDriven * 0.27);
+    printf("\tAllowable:\t ($%.2lf)\n", e->milesDriven * 0.27);
+    printf("Parking Fees:\t\t $%.2lf \n", e->parkingFees);
+    printf("\tAllowable:\t ($%.2lf)\n", e->totalDays * 6.0);
+    printf("Taxi Fees:\t\t $%.2lf \n", e->taxiFees);
+    printf("\tAllowable:\t ($%.2lf)\n", e->totalDays * 10.0);
+    printf("Registration Fees:\t $%.2lf \n", e->registrationFees);
+    printf("\tAllowable:\t ($%.2lf)\n\n", e->registrationFees);
 }
 void totalAllowable(Expenses *e){
     //print line-items of each expense allowable
@@ -57,9 +65,9 @@ void totalBill(Expenses *e){
     bill += e->taxiFees - (e->totalDays * 10.0);
     //registration fees assumed to be covered.
     if(bill > 0) {
-        printf("You need to pay $%d in expenses.", bill);
+        printf("You need to pay $.2%lf in expenses.", bill);
     } else {
-        printf("You saved $%d in expenses.", bill);
+        printf("You saved $%.2lf in expenses.", fabs(bill));
     }
     //printf(bill < 0 ? "(%f)" : "%f", fabs(bill));
 }

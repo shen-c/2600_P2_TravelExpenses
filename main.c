@@ -27,6 +27,7 @@ int main()
     //get user input for expenses (does not include meals)
     fillExpenses(tripPtr);
     //print everything filled out so far in the struct (for testing)
+    printf("\n\nYou entered the following: \n\n");
     printExpenses(tripPtr);
 
     //****** TASK 2 ******
@@ -44,9 +45,11 @@ int main()
     //display total incurred by line item
     totalIncurred(tripPtr);
     //display total allowed by line item
-    totalAllowable(tripPtr);
+    //totalAllowable(tripPtr);
     //display amount saved or reimbursed
     totalBill(tripPtr);
+
+    printf("\n\n*** Thanks for using Travel Expense Calculator! ***");
 
     //****** TASK 4 ******
 
