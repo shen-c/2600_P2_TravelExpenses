@@ -35,7 +35,9 @@ void getMeals(Expenses *e){
     int day = 1;
     bool parsed_correct = true;
 
+    fflush(stdout);
     fflush(stdin);
+ 
 /*
     ****FIRST DAY OF TRIP****
         CALCULATING COMPED MEALS BASED ON DEPARTURE TIME
@@ -49,7 +51,7 @@ void getMeals(Expenses *e){
         printf("\nDay %d meals: \n", day);
         for(int i = 0; i < 3; i++){
             do {
-                printf("How much was %s: ", mealType[i]);
+                printf("How much was %s: $", mealType[i]);
                 char buffer[BUFFER_SIZE];
                 fgets(buffer, BUFFER_SIZE, stdin);
 
@@ -81,7 +83,7 @@ void getMeals(Expenses *e){
         printf("\nDay %d meals: \n", day);
         for(int i = 1; i < 3; i++){
             do {
-                printf("How much was %s: ", mealType[i]);
+                printf("How much was %s: $", mealType[i]);
                 char buffer[BUFFER_SIZE];
                 fgets(buffer, BUFFER_SIZE, stdin);
 
@@ -102,7 +104,7 @@ void getMeals(Expenses *e){
         printf("\nDay %d meals: \n", day);
         for(int i = 2; i < 3; i++){
             do {
-                printf("How much was %s: ", mealType[i]);
+                printf("How much was %s: $", mealType[i]);
                 char buffer[BUFFER_SIZE];
                 fgets(buffer, BUFFER_SIZE, stdin);
 
@@ -130,7 +132,7 @@ void getMeals(Expenses *e){
         printf("\nDay %d meals: \n", day);
         for(int j = 0; j < 3; j++){
             do {
-                printf("How much was %s: ", mealType[j]);
+                printf("How much was %s: $", mealType[j]);
                 char buffer[BUFFER_SIZE];
                 fgets(buffer, BUFFER_SIZE, stdin);
 
@@ -157,7 +159,7 @@ void getMeals(Expenses *e){
         printf("\nDay %d meals: \n", (day));         
         for(int i = 0; i < 3; i++){
             do {
-                printf("How much was %s: ", mealType[i]);
+                printf("How much was %s: $", mealType[i]);
                 char buffer[BUFFER_SIZE];
                 fgets(buffer, BUFFER_SIZE, stdin);
 
@@ -178,7 +180,7 @@ void getMeals(Expenses *e){
         printf("\nDay %d meals: \n", (day));
         for(int i = 0; i < 2; i++){
             do {
-                printf("How much was %s: ", mealType[i]);
+                printf("How much was %s: $", mealType[i]);
                 char buffer[BUFFER_SIZE];
                 fgets(buffer, BUFFER_SIZE, stdin);
 
@@ -197,7 +199,7 @@ void getMeals(Expenses *e){
         printf("\nDay %d meals: \n", (day));        
         for(int i = 0; i < 1; i++){
             do {
-                printf("How much was %s: ", mealType[i]);
+                printf("How much was %s: $", mealType[i]);
                 char buffer[BUFFER_SIZE];
                 fgets(buffer, BUFFER_SIZE, stdin);
 

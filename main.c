@@ -5,13 +5,14 @@
 
 int main()
 {   
-    void fillExpenses(Expenses *e);
-    void printExpenses(Expenses *e);
-    void getMeals(Expenses *e);
-    void printMeals(Expenses *e);
-    void totalIncurred(Expenses *e);
-    void totalAllowable(Expenses *e);
-    void totalBill(Expenses *e);  
+    void fillExpenses(Expenses *e);//gets user input for all expenses (except meals)
+    void printExpenses(Expenses *e);//print expenses for validation
+    void getMeals(Expenses *e); //get user input for meals based on arrival/departure time
+                                //also calculates total meal expenses and total allowed based on time
+    void printMeals(Expenses *e);//print meals array for testing
+    void totalIncurred(Expenses *e);//calc and prints all costs incurred **and all allowables
+    void totalAllowable(Expenses *e);//calc and prints all allowables (not used)
+    void totalBill(Expenses *e);//prints amount saved or reimbursement required
     
     Expenses trip1; // the struct holding all expenses
     Expenses *tripPtr = &trip1; //a pointer to pass the struct by reference into functions
@@ -35,8 +36,9 @@ int main()
 
     //get user input for each relevant meal
     getMeals(tripPtr);
+    printf("\n");
     //print the meals as a grid (for testing)
-    printMeals(tripPtr);
+    //printMeals(tripPtr);
 
     //****** TASK 3 ******
     //implement "finalCalc"
@@ -49,7 +51,7 @@ int main()
     //display amount saved or reimbursed
     totalBill(tripPtr);
 
-    printf("\n\n*** Thanks for using Travel Expense Calculator! ***");
+    printf("\n\n*** Thanks for using Travel Expense Calculator! ***\n\n");
 
     //****** TASK 4 ******
 
