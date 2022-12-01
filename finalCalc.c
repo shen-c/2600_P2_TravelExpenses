@@ -56,5 +56,10 @@ void totalBill(Expenses *e){
     bill += e->parkingFees - (e->totalDays * 6.0);
     bill += e->taxiFees - (e->totalDays * 10.0);
     //registration fees assumed to be covered.
-    printf(bill < 0 ? "(%f)" : "%f", fabs(bill));
+    if(bill > 0) {
+        printf("You need to pay $%d in expenses.", bill);
+    } else {
+        printf("You saved $%d in expenses.", bill);
+    }
+    //printf(bill < 0 ? "(%f)" : "%f", fabs(bill));
 }
